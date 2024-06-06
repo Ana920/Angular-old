@@ -20,4 +20,8 @@ describe('HolaMundoComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should change to false variable', () => {
+    component.alternarDivs();
+    expect(component).toBeTrue();
+  });
 });

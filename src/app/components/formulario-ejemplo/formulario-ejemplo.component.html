@@ -1,0 +1,12 @@
+<h1>Formulario</h1>
+<form [formGroup]="form" (submit)="submit()">
+    <label>Nombre</label>
+    <input type = "text" class="form-control" formControlName="nombre">
+
+    <label>Apellido</label>
+    <input type = "text" class="form-control" formControlName="apellido">
+
+    <button>Submit</button>
+
+    <button type="button" (click)="cambiarNombre()">Cambiar nombre</button>
+</form>

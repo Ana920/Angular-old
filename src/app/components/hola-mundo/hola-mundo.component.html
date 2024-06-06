@@ -1,3 +1,33 @@
 <h1>Título: {{titulo | uppercase}}</h1>
 <br>
-<h2>Color: {{color}}</h2>
+<h2 [style.backgroundColor]="color">Color: {{color}}</h2>
+
+<div [ngStyle]="{padding: '3em'}">
+    <ul class ="list-group">
+        <li class ="list-group-item active">Lista de alumnos:</li>
+        <li class ="list-group-item" *ngFor="let alumno of alumnos">
+            {{alumno}}
+            <button class="btm btn-danger">Borrar</button>
+        </li>
+            <li class ="list-group-item">
+                <div class ="input-group">
+                    <input #txtNombre class="form-control" type="text"> 
+                    
+                    <!--2 opciones. Pasarle el valor del input al método o el HTMLElement entero y manipularlo-->
+                   <!-- <button class="btn btn-outletline-primary" (click)="agregarAlumno(txtNombre.value)">Agregar</button>-->
+                   <button class="btn btn-outletline-primary" (click)="agregarAlumno(txtNombre)">Agregar</button>
+                </div>
+            </li>
+    </ul>
+</div>
+
+
+<button class = "btn btn-primary m-4" (click)="alternarDivs()">Alternar divs de abajo</button>
+<br>
+<div *ngIf="mostrarDiv" class="bg-info">
+    <p>DIV 1</p>
+</div>
+
+<div *ngIf="!mostrarDiv" class="bg-secondary">
+    <p>DIV 2</p>
+</div>
